@@ -425,6 +425,28 @@
     }
     .proj-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.65; font-weight: 300; }
 
+    /* Featured Project Style */
+    .proj-card.featured {
+      border-color: rgba(218,38,40,0.4);
+      box-shadow: 0 4px 24px rgba(218,38,40,0.12);
+    }
+    .proj-card.featured::before {
+      height: 100%;
+    }
+    .proj-card.featured .proj-name::after {
+      content: 'FEATURED';
+      font-size: 0.6rem;
+      padding: 2px 6px;
+      background: var(--red);
+      color: var(--white);
+      border-radius: 2px;
+      margin-left: 10px;
+      vertical-align: middle;
+      font-family: var(--sans);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
     /* ── CONTACT ── */
     #contact { background: var(--dark2); }
     .contact-inner { text-align: center; max-width: 640px; margin: 0 auto; }
@@ -696,6 +718,22 @@
     <p class="section-label reveal">Projects</p>
     <h2 class="section-title reveal">Things I've<br/>shipped.</h2>
     <div class="proj-grid">
+
+      <div class="proj-card featured reveal">
+        <div class="proj-name">SnapDock</div>
+        <div class="proj-tech">
+          <span>Golang</span><span>Docker</span><span>CLI</span><span>GoReleaser</span>
+        </div>
+        <p class="proj-desc">A Git-like snapshot utility for Docker containers. Effortlessly capture, manage, and restore container states with a powerful CLI interface, including support for volumes and environment configurations.</p>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-name">Proximage</div>
+        <div class="proj-tech">
+          <span>Golang</span><span>WebP</span><span>Docker</span><span>Nix</span>
+        </div>
+        <p class="proj-desc">High-performance image proxy server that dynamically converts remote images to WebP format. Features LRU caching and rate limiting to optimize web asset delivery.</p>
+      </div>
 
       <div class="proj-card reveal">
         <div class="proj-name">Chart Engine</div>
