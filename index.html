@@ -432,7 +432,17 @@
     }
     .proj-card:hover { border-color: rgba(218,38,40,0.25); transform: translateY(-4px); }
     .proj-card:hover::before { height: 100%; }
-    .proj-name { font-family: var(--serif); font-size: 1.15rem; color: var(--white); }
+    .proj-name { font-family: var(--serif); font-size: 1.15rem; color: var(--white); display: flex; align-items: center; gap: 8px; }
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--muted);
+      opacity: 0.6;
+      transition: opacity 0.2s, color 0.2s;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+    .proj-link:hover { opacity: 1; color: var(--white); }
     .proj-tech { display: flex; flex-wrap: wrap; gap: 5px; }
     .proj-tech span {
       font-size: 0.7rem;
@@ -837,6 +847,30 @@
           <span>Golang</span><span>Docker</span><span>CLI</span><span>GoReleaser</span>
         </div>
         <p class="proj-desc">A Git-like snapshot utility for Docker containers. Effortlessly capture, manage, and restore container states with a powerful CLI interface, including support for volumes and environment configurations.</p>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-name">DedupX
+          <a href="https://github.com/fadhlidev/dedupx" class="proj-link" target="_blank" rel="noopener" title="View on GitHub">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <div class="proj-tech">
+          <span>Bun</span><span>TypeScript</span><span>CLI</span><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span>
+        </div>
+        <p class="proj-desc">A fast CLI tool for deduplicating database records using configurable similarity rules. Supports multiple comparison algorithms (exact, fuzzy, soundex, ngram, numeric), YAML-based weighted rules, parallel worker pool processing, and blocking strategies to reduce comparison space.</p>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-name">Text2SQL
+          <a href="https://github.com/fadhlidev/text2sql" class="proj-link" target="_blank" rel="noopener" title="View on GitHub">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+        </div>
+        <div class="proj-tech">
+          <span>LLM</span><span>SQL</span><span>REST API</span><span>PostgreSQL</span><span>MySQL</span><span>SQLite</span>
+        </div>
+        <p class="proj-desc">A secure, multi-dialect API that converts natural language questions into executable SQL queries. Automatically introspects your database schema and uses advanced LLMs to generate precise, read-only queries with natural language explanations.</p>
       </div>
 
       <div class="proj-card reveal">
