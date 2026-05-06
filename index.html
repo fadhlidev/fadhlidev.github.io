@@ -443,6 +443,22 @@
       margin-left: auto;
     }
     .proj-link:hover { opacity: 1; color: var(--white); }
+    .proj-xeratic {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      border: 1px solid rgba(218,38,40,0.3);
+      border-radius: 2px;
+      padding: 2px 7px;
+      font-family: var(--sans);
+      margin-top: 8px;
+      align-self: flex-start;
+    }
     .proj-tech { display: flex; flex-wrap: wrap; gap: 5px; }
     .proj-tech span {
       font-size: 0.7rem;
@@ -842,7 +858,9 @@
     <div class="proj-grid">
 
       <div class="proj-card featured reveal">
-        <div class="proj-name">SnapDock</div>
+        <div class="proj-name">SnapDock
+          <a href="https://github.com/fadhlidev/snapdock" class="proj-link" target="_blank" rel="noopener" title="View on GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
         <div class="proj-tech">
           <span>Golang</span><span>Docker</span><span>CLI</span><span>GoReleaser</span>
         </div>
@@ -874,7 +892,9 @@
       </div>
 
       <div class="proj-card reveal">
-        <div class="proj-name">Proximage</div>
+        <div class="proj-name">Proximage
+          <a href="https://github.com/fadhlidev/proximage" class="proj-link" target="_blank" rel="noopener" title="View on GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+        </div>
         <div class="proj-tech">
           <span>Golang</span><span>WebP</span><span>Docker</span><span>Nix</span>
         </div>
@@ -882,10 +902,22 @@
       </div>
 
       <div class="proj-card reveal">
+        <div class="proj-name">LinkR
+          <a href="https://xeratic.com/linkr" class="proj-link" target="_blank" rel="noopener" title="Visit LinkR"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+        </div>
+        <div class="proj-tech">
+          <span>Data Quality</span><span>Entity Resolution</span><span>Deduplication</span><span>Rule Engine</span>
+        </div>
+        <span class="proj-xeratic">@ Xeratic</span>
+        <p class="proj-desc">Data Quality Platform allowing data professionals and business users to solve data quality issues by linking, deduplicating, matching, and stewarding data with customizable ruleset algorithms. Unifies customer data for clearer insights, reduces costly duplication errors, and enables confident data-driven decisions.</p>
+      </div>
+
+            <div class="proj-card reveal">
         <div class="proj-name">Chart Engine</div>
         <div class="proj-tech">
           <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span>
         </div>
+        <span class="proj-xeratic">@ Xeratic</span>
         <p class="proj-desc">Multi-database connection engine that executes dynamic queries and auto-generates chart visualizations. Integrated AI chatbot layer for natural-language data insights — enabling non-technical users to explore data without writing SQL.</p>
       </div>
 
@@ -894,6 +926,7 @@
         <div class="proj-tech">
           <span>Python</span><span>Node.js</span><span>Next.js</span><span>TypeScript</span><span>React</span>
         </div>
+        <span class="proj-xeratic">@ Xeratic</span>
         <p class="proj-desc">Business analytics dashboard covering finance, customer, and KPI metrics. Features AI-based early-warning system and automated business recommendations to accelerate data-driven decision-making.</p>
       </div>
 
@@ -902,6 +935,7 @@
         <div class="proj-tech">
           <span>Java</span><span>Spring Boot</span><span>Pentaho</span><span>React</span>
         </div>
+        <span class="proj-xeratic">@ Xeratic</span>
         <p class="proj-desc">Marketplace data aggregation system pulling from Shopee, Tokopedia, and Lazada into a unified sales dashboard. Replaced manual reporting workflows with automated ETL pipelines providing customer insights and performance analytics.</p>
       </div>
 
