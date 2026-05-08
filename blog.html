@@ -1,312 +1,255 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Blog – Fadhli Syaifullah</title>
-        <meta
-            name="description"
-            content="Writing on software engineering, fullstack development, Go, TypeScript, Docker, and AI systems by Fadhli Syaifullah."
-        />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="styles.css" />
-        <style>
-            /* ── FOOTER ── */
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog – Fadhli Syaifullah</title>
+    <meta name="description"
+        content="Writing on software engineering, fullstack development, Go, TypeScript, Docker, and AI systems by Fadhli Syaifullah." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* ── FOOTER ── */
+
+        footer {
+            background: var(--dark2);
+            border-top: 1px solid var(--border);
+            padding: 28px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* ── RESPONSIVE ── */
+
+        @media (max-width: 900px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-hamburger {
+                display: flex;
+            }
+
+            .theme-toggle {
+                margin-left: auto;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-header {
+                padding: 110px 24px 56px;
+            }
+
+            #blog {
+                padding: 48px 24px 72px;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .divider {
+                margin: 0 24px;
+            }
 
             footer {
-                background: var(--dark2);
-                border-top: 1px solid var(--border);
-                padding: 28px 48px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-size: 0.8rem;
-                color: var(--muted);
+                padding: 24px;
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
             }
+        }
+    </style>
+</head>
 
-            /* ── RESPONSIVE ── */
+<body>
+    <!-- NAV -->
+    <nav>
+        <a href="/" class="nav-logo">Fadhli<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#skills">Skills</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li><a href="/blog.html" class="active">Blog</a></li>
+            <li>
+                <a href="https://collshp.com/programming_setup" class="nav-shopee" target="_blank" rel="noopener"><svg
+                        width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>Programming Setup</a>
+            </li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+        </button>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
 
-            @media (max-width: 900px) {
-                .blog-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-            @media (max-width: 640px) {
-                nav {
-                    padding: 16px 24px;
-                }
-                .nav-links {
-                    display: none;
-                }
-                .page-header {
-                    padding: 110px 24px 56px;
-                }
-                #blog {
-                    padding: 48px 24px 72px;
-                }
-                .filter-bar {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
-                .search-input {
-                    width: 100%;
-                }
-                .blog-grid {
-                    grid-template-columns: 1fr;
-                }
-                .divider {
-                    margin: 0 24px;
-                }
-                footer {
-                    padding: 24px;
-                    flex-direction: column;
-                    gap: 6px;
-                    text-align: center;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <!-- NAV -->
-        <nav>
-            <a href="/" class="nav-logo">Fadhli<span>.</span></a>
-            <ul class="nav-links">
-                <li><a href="/#about">About</a></li>
-                <li><a href="/#skills">Skills</a></li>
-                <li><a href="/#experience">Experience</a></li>
-                <li><a href="/#projects">Projects</a></li>
-                <li><a href="/#contact">Contact</a></li>
-                <li><a href="#" class="active">Blog</a></li>
-                <li>
-                    <a
-                        href="https://collshp.com/programming_setup"
-                        class="nav-shopee"
-                        target="_blank"
-                        rel="noopener"
-                        ><svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2.2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path
-                                d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
-                            />
-                            <line x1="3" y1="6" x2="21" y2="6" />
-                            <path d="M16 10a4 4 0 0 1-8 0" /></svg
-                        >Programming Setup</a
-                    >
-                </li>
-            </ul>
-            <button
-                class="theme-toggle"
-                id="themeToggle"
-                aria-label="Toggle theme"
-            >
-                <svg
-                    class="icon-sun"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <circle cx="12" cy="12" r="5" />
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg
-                ><svg
-                    class="icon-moon"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-            </button>
-            <button
-                class="nav-hamburger"
-                id="navHamburger"
-                aria-label="Open menu"
-            >
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
+    <!-- MOBILE DRAWER -->
+    <div class="nav-drawer" id="navDrawer">
+        <a href="/#about" class="drawer-link">About</a>
+        <a href="/#skills" class="drawer-link">Skills</a>
+        <a href="/#experience" class="drawer-link">Experience</a>
+        <a href="/#projects" class="drawer-link">Projects</a>
+        <a href="/#contact" class="drawer-link">Contact</a>
+        <a href="/blog.html" class="drawer-link active">Blog</a>
+        <a href="https://collshp.com/programming_setup" class="drawer-shopee" target="_blank" rel="noopener"><svg
+                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>Programming Setup</a>
+    </div>
 
-        <!-- MOBILE DRAWER -->
-        <div class="nav-drawer" id="navDrawer">
-            <a href="/#about" class="drawer-link">About</a>
-            <a href="/#skills" class="drawer-link">Skills</a>
-            <a href="/#experience" class="drawer-link">Experience</a>
-            <a href="/#projects" class="drawer-link">Projects</a>
-            <a href="/#contact" class="drawer-link">Contact</a>
-            <a href="#" class="drawer-link active">Blog</a>
-            <a
-                href="https://collshp.com/programming_setup"
-                class="drawer-shopee"
-                target="_blank"
-                rel="noopener"
-                ><svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path
-                        d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
-                    />
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <path d="M16 10a4 4 0 0 1-8 0" /></svg
-                >Programming Setup</a
-            >
-        </div>
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <span class="page-label">Writing</span>
+        <h1 class="page-title">
+            Notes &amp; <em>articles</em><br />from the field.
+        </h1>
+        <p class="page-sub">
+            Thoughts on fullstack engineering, Go, TypeScript, Docker, and
+            building AI-powered systems.
+        </p>
+    </div>
 
-        <!-- PAGE HEADER -->
-        <div class="page-header">
-            <span class="page-label">Writing</span>
-            <h1 class="page-title">
-                Notes &amp; <em>articles</em><br />from the field.
-            </h1>
-            <p class="page-sub">
-                Thoughts on fullstack engineering, Go, TypeScript, Docker, and
-                building AI-powered systems.
-            </p>
-        </div>
+    <div class="divider"></div>
 
-        <div class="divider"></div>
-
-        <!-- BLOG SECTION -->
-        <section id="blog">
-            <div class="blog-inner">
-                <div class="filter-bar">
-                    <span class="filter-count" id="filterCount"
-                        >Loading posts…</span
-                    >
-                    <div class="search-wrap">
-                        <svg
-                            class="search-icon"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <circle cx="11" cy="11" r="8" />
-                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                        </svg>
-                        <input
-                            class="search-input"
-                            type="text"
-                            id="searchInput"
-                            placeholder="Search posts…"
-                            disabled
-                        />
-                    </div>
-                </div>
-
-                <div class="blog-grid" id="blogGrid">
-                    <!-- Loading state -->
-                    <div class="state-box" id="loadingState">
-                        <span class="spinner"></span>
-                        <div>Fetching posts from Blogspot…</div>
-                    </div>
+    <!-- BLOG SECTION -->
+    <section id="blog">
+        <div class="blog-inner">
+            <div class="filter-bar">
+                <span class="filter-count" id="filterCount">Loading posts…</span>
+                <div class="search-wrap">
+                    <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                    <input class="search-input" type="text" id="searchInput" placeholder="Search posts…" disabled />
                 </div>
             </div>
-        </section>
 
-        <!-- FOOTER -->
-        <footer>
-            <span>© 2026 Fadhli Syaifullah</span>
-            <span>Fullstack Developer · Sukoharjo, Indonesia</span>
-        </footer>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Loading state -->
+                <div class="state-box" id="loadingState">
+                    <span class="spinner"></span>
+                    <div>Fetching posts from Blogspot…</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <script>
-            // ── Theme toggle ──
-            const themeToggle = document.getElementById("themeToggle");
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme === "light") document.body.classList.add("light");
-            themeToggle.addEventListener("click", () => {
-                document.body.classList.toggle("light");
-                localStorage.setItem(
-                    "theme",
-                    document.body.classList.contains("light")
-                        ? "light"
-                        : "dark",
-                );
-            });
+    <!-- FOOTER -->
+    <footer>
+        <span>© 2026 Fadhli Syaifullah</span>
+        <span>Fullstack Developer · Sukoharjo, Indonesia</span>
+    </footer>
 
-            // ── Blog fetch via JSONP (Blogger native — no CORS) ──
-            const BLOG_URL = "https://fadhlidev.blogspot.com";
+    <script>
+        // ── Theme toggle ──
+        const themeToggle = document.getElementById("themeToggle");
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "light") document.body.classList.add("light");
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("light");
+            localStorage.setItem(
+                "theme",
+                document.body.classList.contains("light")
+                    ? "light"
+                    : "dark",
+            );
+        });
 
-            let allPosts = [];
-            let jsonpTimeout = null;
+        // ── Blog fetch via JSONP (Blogger native — no CORS) ──
+        const BLOG_URL = "https://fadhlidev.blogspot.com";
 
-            function formatDate(dateStr) {
-                if (!dateStr) return "";
-                try {
-                    const d = new Date(dateStr);
-                    return d.toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                    });
-                } catch {
-                    return "";
-                }
+        let allPosts = [];
+        let jsonpTimeout = null;
+
+        function formatDate(dateStr) {
+            if (!dateStr) return "";
+            try {
+                const d = new Date(dateStr);
+                return d.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                });
+            } catch {
+                return "";
+            }
+        }
+
+        function renderPosts(posts) {
+            const grid = document.getElementById("blogGrid");
+            grid.innerHTML = "";
+
+            if (!posts.length) {
+                grid.innerHTML =
+                    '<div class="no-results">No posts found matching your search.</div>';
+                return;
             }
 
-            function renderPosts(posts) {
-                const grid = document.getElementById("blogGrid");
-                grid.innerHTML = "";
+            posts.forEach((post, i) => {
+                const card = document.createElement("a");
+                card.className = "blog-card";
+                card.href = post.id
+                    ? `./post.html?id=${post.id}`
+                    : post.url;
+                card.style.animationDelay = `${Math.min(i * 0.04, 0.32)}s`;
 
-                if (!posts.length) {
-                    grid.innerHTML =
-                        '<div class="no-results">No posts found matching your search.</div>';
-                    return;
-                }
+                const num = String(i + 1).padStart(2, "0");
+                const date = formatDate(post.published);
 
-                posts.forEach((post, i) => {
-                    const card = document.createElement("a");
-                    card.className = "blog-card";
-                    card.href = post.id
-                        ? `./post.html?id=${post.id}`
-                        : post.url;
-                    card.style.animationDelay = `${Math.min(i * 0.04, 0.32)}s`;
-
-                    const num = String(i + 1).padStart(2, "0");
-                    const date = formatDate(post.published);
-
-                    card.innerHTML = `
+                card.innerHTML = `
         <span class="blog-card-num">${num}</span>
         <span class="blog-card-title">${escapeHtml(post.title)}</span>
         <div class="blog-card-meta">
@@ -314,30 +257,30 @@
           <span class="blog-card-arrow">↗</span>
         </div>
       `;
-                    grid.appendChild(card);
-                });
-            }
+                grid.appendChild(card);
+            });
+        }
 
-            function escapeHtml(str) {
-                return str
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/"/g, "&quot;");
-            }
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;");
+        }
 
-            function updateCount(total, filtered) {
-                const el = document.getElementById("filterCount");
-                if (filtered === total) {
-                    el.innerHTML = `<strong>${total}</strong> post${total !== 1 ? "s" : ""}`;
-                } else {
-                    el.innerHTML = `Showing <strong>${filtered}</strong> of <strong>${total}</strong> posts`;
-                }
+        function updateCount(total, filtered) {
+            const el = document.getElementById("filterCount");
+            if (filtered === total) {
+                el.innerHTML = `<strong>${total}</strong> post${total !== 1 ? "s" : ""}`;
+            } else {
+                el.innerHTML = `Showing <strong>${filtered}</strong> of <strong>${total}</strong> posts`;
             }
+        }
 
-            function renderError(msg) {
-                const grid = document.getElementById("blogGrid");
-                grid.innerHTML = `
+        function renderError(msg) {
+            const grid = document.getElementById("blogGrid");
+            grid.innerHTML = `
       <div class="error-box">
         <strong>Couldn't load posts</strong>
         <p>${msg}</p>
@@ -347,122 +290,123 @@
         </button>
       </div>
     `;
-                document.getElementById("filterCount").textContent =
-                    "Failed to load";
-            }
+            document.getElementById("filterCount").textContent =
+                "Failed to load";
+        }
 
-            // Blogger JSONP callback — called automatically by the injected <script>
-            window.__bloggerCallback = function (data) {
-                clearTimeout(jsonpTimeout);
+        // Blogger JSONP callback — called automatically by the injected <script>
+        window.__bloggerCallback = function (data) {
+            clearTimeout(jsonpTimeout);
 
-                // Clean up old script tag
-                const old = document.getElementById("jsonpScript");
-                if (old) old.remove();
+            // Clean up old script tag
+            const old = document.getElementById("jsonpScript");
+            if (old) old.remove();
 
-                const entries = data.feed?.entry || [];
-                allPosts = entries.map((entry) => {
-                    const link = (entry.link || []).find(
-                        (l) => l.rel === "alternate",
-                    );
-                    // Blogger entry ID: "tag:blogger.com,1999:blog-123.post-456789"
-                    // Extract numeric post ID after "post-"
-                    const rawId = entry.id?.$t || "";
-                    const postId = rawId.match(/\.post-(\d+)$/)?.[1] || "";
-                    return {
-                        title: entry.title?.$t || "Untitled",
-                        url: link?.href || BLOG_URL,
-                        id: postId,
-                        published: entry.published?.$t || "",
-                    };
-                });
-
-                // Sort newest first
-                allPosts.sort(
-                    (a, b) => new Date(b.published) - new Date(a.published),
+            const entries = data.feed?.entry || [];
+            allPosts = entries.map((entry) => {
+                const link = (entry.link || []).find(
+                    (l) => l.rel === "alternate",
                 );
+                // Blogger entry ID: "tag:blogger.com,1999:blog-123.post-456789"
+                // Extract numeric post ID after "post-"
+                const rawId = entry.id?.$t || "";
+                const postId = rawId.match(/\.post-(\d+)$/)?.[1] || "";
+                return {
+                    title: entry.title?.$t || "Untitled",
+                    url: link?.href || BLOG_URL,
+                    id: postId,
+                    published: entry.published?.$t || "",
+                };
+            });
 
-                renderPosts(allPosts);
-                updateCount(allPosts.length, allPosts.length);
-                document.getElementById("searchInput").disabled = false;
-            };
+            // Sort newest first
+            allPosts.sort(
+                (a, b) => new Date(b.published) - new Date(a.published),
+            );
 
-            function fetchPosts() {
-                // Reset UI
-                document.getElementById("blogGrid").innerHTML = `
+            renderPosts(allPosts);
+            updateCount(allPosts.length, allPosts.length);
+            document.getElementById("searchInput").disabled = false;
+        };
+
+        function fetchPosts() {
+            // Reset UI
+            document.getElementById("blogGrid").innerHTML = `
       <div class="state-box">
         <span class="spinner"></span>
         <div>Fetching posts…</div>
       </div>
     `;
-                document.getElementById("filterCount").textContent =
-                    "Loading posts…";
-                document.getElementById("searchInput").disabled = true;
+            document.getElementById("filterCount").textContent =
+                "Loading posts…";
+            document.getElementById("searchInput").disabled = true;
 
-                // Remove any previous JSONP script tag
-                const old = document.getElementById("jsonpScript");
-                if (old) old.remove();
+            // Remove any previous JSONP script tag
+            const old = document.getElementById("jsonpScript");
+            if (old) old.remove();
 
-                // Timeout fallback — if Blogger doesn't respond in 10s
-                jsonpTimeout = setTimeout(() => {
-                    const s = document.getElementById("jsonpScript");
-                    if (s) s.remove();
-                    renderError(
-                        `Request timed out. Check your connection or visit <a href="${BLOG_URL}" target="_blank" style="color:var(--red)">${BLOG_URL}</a> directly.`,
-                    );
-                }, 10000);
+            // Timeout fallback — if Blogger doesn't respond in 10s
+            jsonpTimeout = setTimeout(() => {
+                const s = document.getElementById("jsonpScript");
+                if (s) s.remove();
+                renderError(
+                    `Request timed out. Check your connection or visit <a href="${BLOG_URL}" target="_blank" style="color:var(--red)">${BLOG_URL}</a> directly.`,
+                );
+            }, 10000);
 
-                // Inject JSONP script — Blogger supports alt=json-in-script&callback=fn natively
-                const script = document.createElement("script");
-                script.id = "jsonpScript";
-                script.src = `${BLOG_URL}/feeds/posts/default?alt=json-in-script&max-results=500&callback=__bloggerCallback`;
-                script.onerror = () => {
-                    clearTimeout(jsonpTimeout);
-                    script.remove();
-                    renderError(
-                        `Could not reach Blogspot. Visit <a href="${BLOG_URL}" target="_blank" style="color:var(--red)">${BLOG_URL}</a> directly.`,
-                    );
-                };
-                document.head.appendChild(script);
-            }
+            // Inject JSONP script — Blogger supports alt=json-in-script&callback=fn natively
+            const script = document.createElement("script");
+            script.id = "jsonpScript";
+            script.src = `${BLOG_URL}/feeds/posts/default?alt=json-in-script&max-results=500&callback=__bloggerCallback`;
+            script.onerror = () => {
+                clearTimeout(jsonpTimeout);
+                script.remove();
+                renderError(
+                    `Could not reach Blogspot. Visit <a href="${BLOG_URL}" target="_blank" style="color:var(--red)">${BLOG_URL}</a> directly.`,
+                );
+            };
+            document.head.appendChild(script);
+        }
 
-            // ── Search filtering ──
-            document
-                .getElementById("searchInput")
-                .addEventListener("input", function () {
-                    const q = this.value.trim().toLowerCase();
-                    if (!q) {
-                        renderPosts(allPosts);
-                        updateCount(allPosts.length, allPosts.length);
-                        return;
-                    }
-                    const filtered = allPosts.filter((p) =>
-                        p.title.toLowerCase().includes(q),
-                    );
-                    renderPosts(filtered);
-                    updateCount(allPosts.length, filtered.length);
-                });
-
-            // ── Init ──
-            fetchPosts();
-        </script>
-
-        <script>
-            const hamburger = document.getElementById("navHamburger");
-            const drawer = document.getElementById("navDrawer");
-            hamburger.addEventListener("click", () => {
-                hamburger.classList.toggle("open");
-                drawer.classList.toggle("open");
-                document.body.style.overflow = drawer.classList.contains("open")
-                    ? "hidden"
-                    : "";
+        // ── Search filtering ──
+        document
+            .getElementById("searchInput")
+            .addEventListener("input", function () {
+                const q = this.value.trim().toLowerCase();
+                if (!q) {
+                    renderPosts(allPosts);
+                    updateCount(allPosts.length, allPosts.length);
+                    return;
+                }
+                const filtered = allPosts.filter((p) =>
+                    p.title.toLowerCase().includes(q),
+                );
+                renderPosts(filtered);
+                updateCount(allPosts.length, filtered.length);
             });
-            document.querySelectorAll(".drawer-link").forEach((link) => {
-                link.addEventListener("click", () => {
-                    hamburger.classList.remove("open");
-                    drawer.classList.remove("open");
-                    document.body.style.overflow = "";
-                });
+
+        // ── Init ──
+        fetchPosts();
+    </script>
+
+    <script>
+        const hamburger = document.getElementById("navHamburger");
+        const drawer = document.getElementById("navDrawer");
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("open");
+            drawer.classList.toggle("open");
+            document.body.style.overflow = drawer.classList.contains("open")
+                ? "hidden"
+                : "";
+        });
+        document.querySelectorAll(".drawer-link").forEach((link) => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("open");
+                drawer.classList.remove("open");
+                document.body.style.overflow = "";
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
+
 </html>
