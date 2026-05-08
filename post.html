@@ -218,8 +218,8 @@
             }
 
             // ── Blogger: fetch single post by numeric ID ──
-            // Strategy: use ?postID=NUMERIC_ID on the default feed — more reliable than
-            // the single-entry endpoint which needs a full tag URI, not just a number.
+            // Use the single-entry endpoint by appending the numeric ID to the path.
+            // This returns just the specific post data in the `entry` property.
 
             let jsonpTimer = null;
 
@@ -259,10 +259,10 @@
             function fetchPost(postId) {
                 const script = document.createElement("script");
                 script.id = "__jsonpPost";
-                // ?postID filters the feed to the matching post — works without full tag URI
+                // Fetch a single post by its numeric ID using the path-based endpoint.
                 const url =
-                    `https://fadhlidev.blogspot.com/feeds/posts/default` +
-                    `?alt=json-in-script&postID=${postId}&callback=__postCallback`;
+                    `https://fadhlidev.blogspot.com/feeds/posts/default/${postId}` +
+                    `?alt=json-in-script&callback=__postCallback`;
                 script.src = url;
 
                 console.log("[post] fetching:", url);
