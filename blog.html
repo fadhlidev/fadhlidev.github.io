@@ -85,6 +85,249 @@
                 text-align: center;
             }
         }
+
+        .promo-hero {
+            display: block;
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 36px;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid rgba(218, 38, 40, 0.18);
+            transition: border-color 0.2s, box-shadow 0.25s, transform 0.2s;
+        }
+
+        .promo-hero:hover {
+            border-color: rgba(218, 38, 40, 0.48);
+            box-shadow: 0 8px 36px rgba(218, 38, 40, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .promo-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: var(--dark2, #111116);
+            z-index: 0;
+        }
+
+        .promo-hero-glow {
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(218, 38, 40, 0.12) 0%, transparent 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .promo-hero-stripe {
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(-55deg, transparent, transparent 20px, rgba(218, 38, 40, 0.025) 20px, rgba(218, 38, 40, 0.025) 21px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .promo-hero-top {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px 0;
+        }
+
+        .promo-hero-eyebrow {
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: #da2628;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .promo-hero-eyebrow-line {
+            display: inline-block;
+            width: 14px;
+            height: 1px;
+            background: #da2628;
+            flex-shrink: 0;
+        }
+
+        .promo-hero-sponsor {
+            font-size: 0.57rem;
+            color: var(--muted, #555);
+        }
+
+        .promo-hero-divider {
+            position: relative;
+            z-index: 2;
+            height: 1px;
+            background: var(--border, rgba(255, 255, 255, 0.06));
+            margin: 10px 20px 0;
+        }
+
+        /* KEY FIX: grid instead of flex — no wrap issues */
+        .promo-hero-body {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: center;
+            padding: 14px 20px 18px;
+        }
+
+        .promo-hero-left {
+            min-width: 0;
+        }
+
+        .promo-hero-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text, #e8e8ec);
+            line-height: 1.3;
+            margin: 0 0 4px;
+        }
+
+        .promo-hero-sub {
+            font-size: 0.74rem;
+            color: var(--muted, #666);
+            line-height: 1.55;
+            margin: 0 0 10px;
+        }
+
+        .promo-hero-plans {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .promo-hero-plan {
+            font-size: 0.64rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border, rgba(255, 255, 255, 0.07));
+            color: var(--muted, #888);
+            white-space: nowrap;
+            text-decoration: none;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .promo-hero-plan:hover {
+            border-color: rgba(218, 38, 40, 0.35);
+            color: var(--text, #e0e0e6);
+        }
+
+        .promo-hero-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .promo-hero-price-from {
+            font-size: 0.59rem;
+            color: var(--muted, #555);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            text-align: right;
+        }
+
+        .promo-hero-price-val {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.5rem;
+            color: var(--text, #e8e8ec);
+            line-height: 1;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .promo-hero-price-mo {
+            font-size: 0.68rem;
+            color: var(--muted, #666);
+        }
+
+        .promo-hero-discount {
+            font-size: 0.62rem;
+            font-weight: 700;
+            background: rgba(218, 38, 40, 0.1);
+            color: #da2628;
+            border: 1px solid rgba(218, 38, 40, 0.22);
+            border-radius: 4px;
+            padding: 2px 7px;
+            white-space: nowrap;
+        }
+
+        .promo-hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            color: #fff;
+            background: #da2628;
+            border-radius: 8px;
+            padding: 8px 16px;
+            white-space: nowrap;
+            transition: background 0.15s;
+        }
+
+        .promo-hero:hover .promo-hero-cta {
+            background: #bf1e20;
+        }
+
+        @media (max-width: 560px) {
+            .promo-hero-body {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                padding: 12px 16px 16px;
+            }
+
+            .promo-hero-top {
+                padding: 12px 16px 0;
+            }
+
+            .promo-hero-divider {
+                margin: 10px 16px 0;
+            }
+
+            .promo-hero-right {
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 8px;
+                justify-content: space-between;
+            }
+
+            .promo-hero-price-from {
+                display: none;
+            }
+
+            .promo-hero-price-val {
+                font-size: 1.3rem;
+            }
+
+            .promo-hero-cta {
+                flex: 1;
+                justify-content: center;
+                min-width: 120px;
+            }
+
+            .promo-hero-plans {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -207,6 +450,113 @@
                     : "dark",
             );
         });
+
+
+        // ── Hostinger Promo Banner ──
+        const PROMO_CAMPAIGNS = [
+            {
+                type: 'vps',
+                eyebrow: 'Sponsored · VPS Hosting',
+                title: 'VPS Performa Tinggi untuk Developer',
+                sub: 'NVMe SSD, full root access, dan uptime 99.9%. Ideal buat deploy app, API, atau Docker workload kamu.',
+                icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
+                fromPrice: 'Mulai dari',
+                price: 'Rp135.900',
+                plans: [
+                    { label: 'KVM 1 · 1vCPU 4GB', href: 'https://www.hostinger.com/id/cart?product=vps%3Avps_kvm_1&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0abf-45d1-709e-a703-7677532c3667' },
+                    { label: 'KVM 2 · 2vCPU 8GB', href: 'https://www.hostinger.com/id/cart?product=vps%3Avps_kvm_2&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0abf-7c5d-7008-99c0-88e59ca8af46' },
+                    { label: 'KVM 4 · 4vCPU 16GB', href: 'https://www.hostinger.com/id/cart?product=vps%3Avps_kvm_4&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0abf-9f6d-72a4-af84-78f1d26a7a54' },
+                    { label: 'KVM 8 · 8vCPU 32GB', href: 'https://www.hostinger.com/id/cart?product=vps%3Avps_kvm_8&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0abf-ca70-7311-9ed2-599dcf7c55fb' },
+                ],
+                ctaText: 'Pilih Plan VPS',
+                defaultHref: 'https://www.hostinger.com/id/cart?product=vps%3Avps_kvm_1&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0abf-45d1-709e-a703-7677532c3667',
+                discount: '-20%'
+            },
+            {
+                type: 'openclaw',
+                eyebrow: 'Sponsored · Managed AI Hosting',
+                title: 'OpenClaw — AI Agent siap pakai',
+                sub: 'Deploy AI agent dengan Telegram & WhatsApp pairing, web search built-in, dan zero maintenance. Langsung jalan.',
+                icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3"/></svg>`,
+                fromPrice: 'Hanya',
+                price: 'Rp137.900',
+                plans: [
+                    { label: 'Managed OpenClaw Starter', href: 'https://www.hostinger.com/id/cart?product=dockerhosting%3Astarter&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0ac0-2baf-734d-bbf8-a0edf467194c&vps_application_id=245' }
+                ],
+                ctaText: 'Mulai Sekarang',
+                defaultHref: 'https://www.hostinger.com/id/cart?product=dockerhosting%3Astarter&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0ac0-2baf-734d-bbf8-a0edf467194c&vps_application_id=245',
+                discount: '-20%'
+            },
+            {
+                type: 'webhost',
+                eyebrow: 'Sponsored · Web Hosting',
+                title: 'Web Hosting Terjangkau untuk Website Kamu',
+                sub: 'NVMe SSD, free domain, SSL otomatis, dan dukungan WordPress. Cocok buat portfolio, blog, sampai toko online.',
+                icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+                fromPrice: 'Mulai dari',
+                price: 'Rp39.900',
+                plans: [
+                    { label: 'Premium · 3 website', href: 'https://www.hostinger.com/id/cart?product=hosting%3Ahostinger_premium&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0ac0-8079-70af-9bd9-6bffa2d25ff0' },
+                    { label: 'Business · 50 website', href: 'https://www.hostinger.com/id/cart?product=hosting%3Ahostinger_business&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0ac0-a1fd-70e1-99a5-8bee5a43b8cc' },
+                    { label: 'Cloud Startup · 100 website', href: 'https://www.hostinger.com/id/cart?product=hosting%3Acloud_economy&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0ac0-e68a-7127-b883-cfc4a3d9d9af' },
+                ],
+                ctaText: 'Lihat Paket Hosting',
+                defaultHref: 'https://www.hostinger.com/id/cart?product=hosting%3Ahostinger_premium&period=12&referral_type=cart_link&REFERRALCODE=FADHLIDEV&referral_id=019e0ac0-8079-70af-9bd9-6bffa2d25ff0',
+                discount: '-20%'
+            }
+        ];
+
+        function renderPromoBanner() {
+            const campaign = PROMO_CAMPAIGNS[Math.floor(Math.random() * PROMO_CAMPAIGNS.length)];
+            const plansHtml = campaign.plans.length > 1
+                ? `<div class="promo-hero-plans">${campaign.plans.map(p =>
+                    `<a href="${p.href}" target="_blank" rel="noopener sponsored" class="promo-hero-plan" onclick="event.stopPropagation()">${p.label}</a>`
+                ).join('')}</div>`
+                : '';
+
+            const banner = document.createElement('a');
+            banner.className = 'promo-hero';
+            banner.href = campaign.defaultHref;
+            banner.target = '_blank';
+            banner.rel = 'noopener sponsored';
+            banner.setAttribute('aria-label', campaign.title);
+            banner.innerHTML = `
+                <div class="promo-hero-bg"></div>
+<div class="promo-hero-glow"></div>
+<div class="promo-hero-stripe"></div>
+
+<div class="promo-hero-top">
+    <div class="promo-hero-eyebrow">
+        <span class="promo-hero-eyebrow-line"></span>
+        Hostinger · ${campaign.eyebrow}
+    </div>
+    <span class="promo-hero-sponsor">sponsored</span>
+</div>
+<div class="promo-hero-divider"></div>
+
+<div class="promo-hero-body">
+    <div class="promo-hero-left">
+        <p class="promo-hero-title">${campaign.title}</p>
+        <p class="promo-hero-sub">${campaign.sub}</p>
+        ${plansHtml}
+    </div>
+    <div class="promo-hero-right">
+        <div>
+            <div class="promo-hero-price-from">${campaign.fromPrice}</div>
+            <div class="promo-hero-price-val">${campaign.price}<span class="promo-hero-price-mo">/mo</span></div>
+        </div>
+        <span class="promo-hero-discount">${campaign.discount} OFF</span>
+        <span class="promo-hero-cta">${campaign.ctaText} →</span>
+    </div>
+</div>
+            `;
+
+            const blogInner = document.querySelector('#blog .blog-inner');
+            const filterBar = blogInner.querySelector('.filter-bar');
+            blogInner.insertBefore(banner, filterBar);
+        }
+
+        renderPromoBanner();
 
         // ── Blog fetch via JSONP (Blogger native — no CORS) ──
         const BLOG_URL = "https://fadhlidev.blogspot.com";
