@@ -89,6 +89,156 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <style>
+        /* ── WHAT I CAN DO FOR YOU ── */
+
+        .value-intro {
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 48px;
+            max-width: 480px;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+        }
+
+        .value-card {
+            background: var(--dark);
+            padding: 36px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: background 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--red);
+            transition: height 0.35s ease;
+        }
+
+        .value-card:hover::before {
+            height: 100%;
+        }
+
+        .value-card:hover {
+            background: color-mix(in srgb, var(--dark) 92%, var(--red) 8%);
+        }
+
+        .value-icon {
+            color: var(--red);
+            display: flex;
+            align-items: center;
+        }
+
+        .value-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.18rem;
+            color: var(--light);
+            font-weight: 400;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .value-desc {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .value-proof {
+            font-size: 0.75rem;
+            color: var(--red);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            opacity: 0.85;
+        }
+
+        .value-card--cta {
+            background: var(--red);
+            justify-content: center;
+        }
+
+        .value-card--cta::before {
+            display: none;
+        }
+
+        .value-card--cta:hover {
+            background: color-mix(in srgb, var(--red) 88%, #000 12%);
+        }
+
+        .value-cta-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .value-cta-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 500;
+        }
+
+        .value-cta-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            font-weight: 400;
+            line-height: 1.25;
+            margin: 0;
+        }
+
+        .value-cta-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .value-cta-links .btn-primary {
+            background: #fff;
+            color: var(--red);
+            border-color: #fff;
+        }
+
+        .value-cta-links .btn-primary:hover {
+            background: transparent;
+            color: #fff;
+        }
+
+        .value-cta-links .btn-ghost {
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #fff;
+        }
+
+        .value-cta-links .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        @media (max-width: 900px) {
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .value-card {
+                padding: 28px 24px;
+            }
+        }
+
         /* ── FOOTER ── */
 
         footer {
@@ -174,6 +324,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#value">Value</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="/blog.html">Blog</a></li>
             <li>
@@ -214,6 +365,7 @@
         <a href="#skills" class="drawer-link">Skills</a>
         <a href="#experience" class="drawer-link">Experience</a>
         <a href="#projects" class="drawer-link">Projects</a>
+        <a href="#value" class="drawer-link">Value</a>
         <a href="#contact" class="drawer-link">Contact</a>
         <a href="/blog.html" class="drawer-link">Blog</a>
         <a href="https://collshp.com/programming_setup" class="drawer-shopee" target="_blank" rel="noopener"><svg
@@ -661,6 +813,116 @@
                         automated ETL pipelines providing customer insights
                         and performance analytics.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- WHAT I CAN DO FOR YOU -->
+    <section id="value">
+        <div class="section-inner">
+            <p class="section-label reveal">Value I Bring</p>
+            <h2 class="section-title reveal">
+                What I can do<br /><em>for you.</em>
+            </h2>
+            <p class="value-intro reveal">
+                Not just a list of technologies — here's what you actually get when you hire me.
+            </p>
+            <div class="value-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Turn messy data into decisions</h3>
+                    <p class="value-desc">
+                        I take vague data problems and ship working dashboards, pipelines, and AI-insight features —
+                        fast. At Xeratic I've done this across 3+ live products.
+                    </p>
+                    <div class="value-proof">✦ Chart Engine · Dashbot · XellR</div>
+                </div>
+
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Own the full stack — no hand-offs</h3>
+                    <p class="value-desc">
+                        From Postgres schema to React UI, I ship end-to-end without waiting on another team. One hire,
+                        full ownership. I've built entire product features solo.
+                    </p>
+                    <div class="value-proof">✦ Go · Node.js · React · Next.js · Docker</div>
+                </div>
+
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                            <path d="M4.93 4.93a10 10 0 0 0 0 14.14" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Integrate AI into existing systems</h3>
+                    <p class="value-desc">
+                        I wire LLMs, agents, and AI pipelines into production backends — not toy demos. LangChain,
+                        LangGraph, Azure OpenAI, MCP — in real, deployed products.
+                    </p>
+                    <div class="value-proof">✦ Xera AI Agent · Text2SQL · Chart Engine AI</div>
+                </div>
+
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                            <polyline points="13 2 13 9 20 9" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Ship clean, documented code</h3>
+                    <p class="value-desc">
+                        I write code junior developers can read and extend. Every project I build gets a proper README,
+                        architecture doc, and clear conventions — no "tribal knowledge" trap.
+                    </p>
+                    <div class="value-proof">✦ PROJECT.md · Architecture diagrams · Nix dev shells</div>
+                </div>
+
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Adapt fast, ship faster</h3>
+                    <p class="value-desc">
+                        Industrial engineering background means I debug systems under pressure — no Stack Overflow, no
+                        guessing. I hit the ground running and ask the right questions first.
+                    </p>
+                    <div class="value-proof">✦ PLC/DCS → Fullstack in 12 months</div>
+                </div>
+
+                <div class="value-card value-card--cta reveal">
+                    <div class="value-cta-inner">
+                        <p class="value-cta-label">Ready to talk?</p>
+                        <h3 class="value-cta-title">Let's build something that matters.</h3>
+                        <div class="value-cta-links">
+                            <a href="mailto:fadhlisyaifullah@proton.me" class="btn btn-primary">Send an Email</a>
+                            <a href="https://www.upwork.com/freelancers/~01926ab890b89f38e7" class="btn btn-ghost"
+                                target="_blank" rel="noopener">↗ Hire on Upwork</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
