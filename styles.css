@@ -25,7 +25,7 @@ body.light {
     --dark2: #e6e2db;
     --dark3: #dad6ce;
     --border: rgba(0, 0, 0, 0.1);
-    --muted: #6b6760;
+    --muted: #5e5a52;
     --light: #2a2520;
     --white: #1a1612;
 }
@@ -130,6 +130,11 @@ body {
     font-size: 15px;
     line-height: 1.65;
     overflow-x: hidden;
+}
+
+:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 4px;
 }
 
 /* ── NOISE OVERLAY ── */
