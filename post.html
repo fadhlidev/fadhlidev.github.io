@@ -64,6 +64,130 @@
                 align-items: flex-start;
             }
         }
+
+        /* ── PRODUCT CARD (inline native) ── */
+        .inline-product-pair {
+            margin: 2.8rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .inline-product-pair-label {
+            font-size: 0.67rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted, #555);
+        }
+
+        .inline-product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .inline-product-block {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+            background: var(--dark2, #111116);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s;
+        }
+
+        .inline-product-block:hover {
+            border-color: rgba(218, 38, 40, 0.5);
+            box-shadow: 0 6px 24px rgba(218, 38, 40, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .inline-product-img-wrap {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: var(--dark3, #0d0d12);
+            overflow: hidden;
+        }
+
+        .inline-product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .inline-product-block:hover .inline-product-img {
+            transform: scale(1.04);
+        }
+
+        .inline-product-body {
+            padding: 12px 14px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .inline-product-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.62rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #da2628;
+        }
+
+        .inline-product-name {
+            font-size: 0.8rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--text, #e8e8ec);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .inline-product-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 0.74rem;
+            font-weight: 600;
+            color: #fff;
+            background: #da2628;
+            border-radius: 7px;
+            padding: 7px 10px;
+            transition: background 0.15s;
+            margin-top: auto;
+        }
+
+        .inline-product-block:hover .inline-product-cta {
+            background: #c01f21;
+        }
+
+        @media (max-width: 540px) {
+            .inline-product-grid {
+                gap: 8px;
+            }
+
+            .inline-product-body {
+                padding: 10px 10px 12px;
+            }
+
+            .inline-product-name {
+                font-size: 0.74rem;
+                -webkit-line-clamp: 2;
+            }
+        }
     </style>
 </head>
 
@@ -174,6 +298,58 @@
 
         function getParam(key) {
             return new URLSearchParams(window.location.search).get(key);
+        }
+
+        // ── Product list ──
+        const PRODUCTS = [{ "image": "https://mms.img.susercontent.com/id-11134207-7ra0k-mcpup5j719h83f", "name": "PACPIE Laptop Stand 360° Rotatable Portable / Braket Notebook Dengan Kipas Untuk Kantor dan Belajar", "link": "https://s.shopee.co.id/2LUzTCL4ED" }, { "image": "https://mms.img.susercontent.com/id-11134207-7r98x-lr2la8l143lg88", "name": "iCast Laptop Stand 360° Dudukan Laptop & Tablet 360 derajat", "link": "https://s.shopee.co.id/7ppw1HE4F7" }, { "image": "https://mms.img.susercontent.com/id-11134207-7qul7-lk1zxddcnzgjc0", "name": "Noir NUHC17 - 7in1 USB Type C Hub To HDMI 4K USB 3.0 Macbook", "link": "https://s.shopee.co.id/6Ahi258aYF" }, { "image": "https://mms.img.susercontent.com/id-11134207-81ztm-mes955thtqf50d", "name": "Neo Serenite C3 - Ergonomic Office Chair | Kursi Kantor Ergonomis", "link": "https://s.shopee.co.id/8fP30em8ed" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-7rbk3-m6gjwbdmcv3597.webp", "name": "Noir Timeless82 v2 Classic Edition Mechanical Keyboard Gasket Mount", "link": "https://s.shopee.co.id/1VvsTQoIst" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-8224p-mkkfr7j4ctfqc4.webp", "name": "Noir Spade65 65% Aluminum Wireless Mechanical Keyboard Gasket Mount", "link": "https://s.shopee.co.id/4LG3qZssl6" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-8224o-mgdd2l1hywwb97.webp", "name": "Noir N1/X 65% Wireless Mechanical Keyboard Gasket Mount VIA/QMK", "link": "https://s.shopee.co.id/5flRQbtQbD" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-7rasf-m1pblucmlkjf9a.webp", "name": "Coiled Cable BASIC - Type C Aviator Cable for Mechanical Keyboard by Press Play", "link": "https://s.shopee.co.id/2BBZG1srEf" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-7r98p-lx7w2sd16qsu04.webp", "name": "POWER STRIP TRAY for NOOK Desk Shelf Pro", "link": "https://s.shopee.co.id/8fP2zvZWB0" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-8224x-mkm4ti9aoohtd7.webp", "name": "LIQUID Series Gaming Mousepad Deskmat by Press Play", "link": "https://s.shopee.co.id/5ApApR83Bx" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134201-7rbk6-m6gjwbdmcv3597.webp", "name": "Xiaomi Monitor A27i | Panel IPS 100Hz FHD Monitor 27 Inch", "link": "https://s.shopee.co.id/9ALJ38gkAV" }, { "image": "https://down-ws-id.img.susercontent.com/82c9513607ea109a1cef8fb11f0fe483.webp", "name": "Keychron Wooden Palm Rest", "link": "https://s.shopee.co.id/BQUKNxQvo" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-8224s-mh7osfa6i3gs93.webp", "name": "Keychron S1 QMK RGB Backlight Hot-swappable Low Profile Custom Mechanical Keyboard", "link": "https://s.shopee.co.id/9zuQ2Qo1wA" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-81ztc-me11h3if3ncw4d.webp", "name": "Keychron B1 Pro Ultra-Slim Wireless Keyboard Bluetooth & Wired", "link": "https://s.shopee.co.id/50Vk58I0KF" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-822wh-mnxxl1jehurq9c.webp", "name": "Logitech MX Master 3S Performance Mouse Wireless Bluetooth Quiet Click", "link": "https://s.shopee.co.id/40dCtFepON" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-822wi-mnxxdvvv21okb9.webp", "name": "Logitech MX Master 4, Mouse Wireless Ergonomis Berkinerja Tinggi", "link": "https://s.shopee.co.id/W3KilbURx" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-822wn-mmva2cdq75z794.webp", "name": "BenQ GW2291 21.5\" 1080p FHD 100Hz IPS Eye-Care Monitor", "link": "https://s.shopee.co.id/4fstgLfNsE" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-7r98u-lwz7aokxwx7ud9.webp", "name": "BenQ GW2790 | 27\" 1080p FHD 100Hz Eye-Care Monitor", "link": "https://s.shopee.co.id/3qJmgjKevc" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-822wp-mmvdroz5tssi2d.webp", "name": "Hanging Lamp Screen Modern Lampu Layar LED Monitor Light Bar", "link": "https://s.shopee.co.id/7AaCQ3dV3R" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-7rbk9-m93wg95hlu6aa2.webp", "name": "Monitor Bracket Gas Spring 13-32 inch Satu ARM dan Dua ARM", "link": "https://s.shopee.co.id/6L15QQvXUP" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-7ra0s-mb8gdb2j6t3q8a.webp", "name": "Sandaran tangan / Wrist rest / Arm rest Keyboard", "link": "https://s.shopee.co.id/LjsHIZv5D" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-8224y-mk7trh7v356r7f.webp", "name": "Homedoki Kursi Gaming / Kursi Kantor Ergonomis Putar", "link": "https://s.shopee.co.id/9fHXNQKwoY" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-822wi-mnw88ecedkp1b9.webp", "name": "Xpanse Meja Kerja Elektrik Adjustable Standing Desk", "link": "https://s.shopee.co.id/3LNTpePwnj" }, { "image": "https://down-ws-id.img.susercontent.com/9507a3f32a112bc2dacb07700f7b6ebe.webp", "name": "JBL Tune 510BT Wireless On-Ear Headphones with Purebass Sound", "link": "https://s.shopee.co.id/8UzGCtEgA0" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-7r98r-lr1ijfyv72s91a.webp", "name": "Eggel Stage SoundBar / Sound Bar with Built-In Woofer", "link": "https://s.shopee.co.id/8Kfq0aFJUz" }, { "image": "https://down-ws-id.img.susercontent.com/id-11134207-7rbk4-ma3no1jpuz3ke4.webp", "name": "Rode NT-USB Mini Microphone", "link": "https://s.shopee.co.id/8AMPoHFwpy" }];
+
+        function pickTwoRandom(arr) {
+            const shuffled = [...arr].sort(() => Math.random() - 0.5);
+            return shuffled.slice(0, 2);
+        }
+
+        function buildProductCard(p) {
+            return `
+            <a href="${p.link}" target="_blank" rel="noopener noreferrer sponsored" class="inline-product-block">
+                <div class="inline-product-img-wrap">
+                    <img class="inline-product-img" src="${p.image}" alt="${escapeHtml(p.name)}" loading="lazy" />
+                </div>
+                <div class="inline-product-body">
+                    <div class="inline-product-eyebrow">
+                        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        Setup saya
+                    </div>
+                    <div class="inline-product-name">${escapeHtml(p.name)}</div>
+                    <div class="inline-product-cta">
+                        Lihat di Shopee
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
+                </div>
+            </a>`;
+        }
+
+        function injectProductsIntoContent(htmlContent) {
+            const wrapper = document.createElement('div');
+            wrapper.innerHTML = htmlContent;
+            const paras = wrapper.querySelectorAll('p, h2, h3, figure, pre, blockquote');
+            if (paras.length < 3) return htmlContent;
+
+            const midIdx = Math.floor(paras.length / 2);
+            const [p1, p2] = pickTwoRandom(PRODUCTS);
+
+            const productBlock = document.createElement('div');
+            productBlock.className = 'inline-product-pair';
+            productBlock.innerHTML = `
+                <div class="inline-product-pair-label">✦ Dari setup saya</div>
+                <div class="inline-product-grid">
+                    ${buildProductCard(p1)}
+                    ${buildProductCard(p2)}
+                </div>
+            `;
+
+            const refNode = paras[midIdx];
+            refNode.parentNode.insertBefore(productBlock, refNode);
+            return wrapper.innerHTML;
         }
 
         // ── Blogger: fetch single post by numeric ID ──
@@ -298,7 +474,9 @@
     `;
 
             // innerHTML intentional — content is from your own Blogger blog
-            document.getElementById("postBody").innerHTML = content;
+            // Inject 2 random product cards at midpoint of article
+            const enrichedContent = injectProductsIntoContent(content);
+            document.getElementById("postBody").innerHTML = enrichedContent;
 
             // Open external links in new tab
             document.querySelectorAll(".prose-body a").forEach((a) => {
